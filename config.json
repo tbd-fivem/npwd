@@ -23,9 +23,9 @@
     "payFunction": "myCheckerFunction"
   },
   "database": {
-    "useIdentifierPrefix": false,
-    "playerTable": "users",
-    "identifierColumn": "identifier",
+    "useIdentifierPrefix": true,
+    "playerTable": "players",
+    "identifierColumn": "license",
     "identifierType": "license",
     "profileQueries": true,
     "phoneNumberColumn": "phone_number"
