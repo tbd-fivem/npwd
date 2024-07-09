@@ -72,13 +72,10 @@ class _PhotoService {
           if (config.images.type === 'r2') {
             try {
               // upload to r2
-              await exports['r2'].uploadObject(_data.buffer, key, config.images.contentType);
-
-              const player = PlayerService.getPlayer(reqObj.source);
+              await exports['r2'].uploadObject(_data.buffer, key, config.images.contentType, "fotos");
 
               const identifier = PlayerService.getIdentifier(reqObj.source);
               const photo = await this.photoDB.uploadPhoto(identifier, config.images.url + key);
-
               // File is uploaded, so its safe to remove
               fs.rmSync(filePath);
 
