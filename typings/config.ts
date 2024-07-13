@@ -103,6 +103,7 @@ interface VoiceMessageConfig {
   enabled: boolean;
   token: string;
   url: string;
+  uploadR2: boolean;
   authorizationHeader: string;
   authorizationPrefix: string;
   returnedDataIndexes: Array<any>;

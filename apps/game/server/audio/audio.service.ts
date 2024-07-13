@@ -34,6 +34,26 @@ class _AudioService {
       const blob = fileFromSync(filePath, 'audio/ogg');
       form_data.append('recording', blob);
 
+      //asdsa
+      //upload to r2
+      if (config.voiceMessage.uploadR2) {
+        console.log('starting r2 uploading...');
+        const key = filePath.split('recording-')[1];
+        const arrayBuffer = await blob.arrayBuffer();
+        await exports['r2']
+          .uploadObject(arrayBuffer, key, 'audio/ogg', 'audio')
+          .then(() => {
+            console.log('audio enviado com sucesso para o r2');
+            resp({ status: 'ok', data: { url: config.voiceMessage.url + key } });
+            return;
+          })
+          .catch((response: any) => {
+            console.log('erro ao enviar arquivo para o r2');
+            console.log(response)
+          });
+        return;
+      }
+
       const res = await fetch(config.voiceMessage.url, {
         method: 'POST',
         headers: {

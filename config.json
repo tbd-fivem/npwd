@@ -99,11 +99,12 @@
   },
   "defaultContacts": [],
   "disabledApps": [],
-  "apps": [],
+  "apps": [""],
   "voiceMessage": {
-    "enabled": false,
+    "uploadR2": true,
+    "enabled": true,
     "authorizationHeader": "Authorization",
-    "url": "https://api.fivemanage/api/audio",
+    "url": "https://pub-33d07ca293a24d4ea8b317b6b0b0c01f.r2.dev/",
     "returnedDataIndexes": ["url"]
   }
 }
