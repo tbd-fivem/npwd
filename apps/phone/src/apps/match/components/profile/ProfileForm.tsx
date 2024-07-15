@@ -73,7 +73,7 @@ export function ProfileForm({ profile, showPreview }: IProps) {
   const [tags, setTags] = useState(profile?.tags || '');
   const [voiceMessage, setVoiceMessage] = useState<Blob | null>(null);
   const [recordVoiceMessage, setRecordVoiceMessage] = useState(false);
-  const { play, pause, playing, currentTime, duration } = useAud ioPlayer(profile.voiceMessage);
+  const { play, pause, playing, currentTime, duration } = useAudioPlayer(profile.voiceMessage);
 
   const closeVoiceMessageModal = () => {
     setRecordVoiceMessage((curVal) => !curVal);

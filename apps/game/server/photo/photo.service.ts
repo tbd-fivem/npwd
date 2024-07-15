@@ -76,10 +76,7 @@ class _PhotoService {
                 type,
                 GetConvar('bucketname', 'false'),
               );
-
-              const player = PlayerService.getPlayer(reqObj.source);
               const identifier = PlayerService.getIdentifier(reqObj.source);
-
               const photo = await this.photoDB.uploadPhoto(identifier, config.images.url + key);
 
               // File is uploaded, so its safe to remove
